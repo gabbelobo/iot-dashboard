@@ -1,0 +1,21 @@
+.app {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: auto;
+    min-height: 100vh;
+    border-left: 1px solid rgb(237, 237, 237);
+    border-right: 1px solid rgb(237, 237, 237);
+    overflow-x: hidden;
+}
+
+.row {
+    display: flex;
+    margin: 1rem -15px;
+    flex-wrap: wrap;
+}
+
+@media screen and(max-width: 768px) {
+    .app {
+        padding: 2rem 0.75rem;
+    }
+}
