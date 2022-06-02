@@ -36,7 +36,7 @@ const Temperature = ({ data, last }) => {
             })
         }
         
-        return filteredData.reverse()
+        return filteredData
     }, [data])
 
     return (
