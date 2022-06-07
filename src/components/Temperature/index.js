@@ -24,10 +24,10 @@ const Temperature = ({ data, last }) => {
 
     const chartData = useMemo(() => {
         
-        let iterations = Math.max(Math.floor(Math.min(6, data.length/4)), 1)
+        let iterations = Math.max(Math.floor(Math.min(6, data.length/12)), 1)
         let filteredData = []
         for(let i = 0; i < iterations; i++){
-            let index = data.length - 1 - (i*4)
+            let index = data.length - 1 - (i*12)
             let item = data[index]
             let dia = new Date(item.timestamp)
             filteredData.push({

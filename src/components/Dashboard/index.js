@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react'
+import React, { useMemo } from 'react'
 import Stat from '../Stat'
 import Temperature from '../Temperature'
 import styles from '../App/App.module.scss'
@@ -6,10 +6,10 @@ import ArcProgress from 'react-arc-progress';
 import Arrow from '../Arrow'
 import DigitalNumber from '../DigitalNumber'
 
-export const Dashboard = ({data,last}) => {
+export const Dashboard = ({ data, last }) => {
 
     const rescale = (min, max, a, b, x) => {
-        return ((b-a) * (x - min) / (max-min)) + a
+        return ((b - a) * (x - min) / (max - min)) + a
     }
 
     const ARC_SIZE = 120
@@ -20,15 +20,13 @@ export const Dashboard = ({data,last}) => {
         left: `calc((100% - ${ARC_SIZE}px)/2)`,
         top: `calc((100% - ${ARC_SIZE}px)/2)`
     }
-    const pressurePercentage = useMemo(() => last ? rescale(1000,1030,0,1,last.pressure) : 0, [last])
+    const pressurePercentage = useMemo(() => last ? rescale(1000, 1030, 0, 1, last.pressure) : 0, [last])
     const humidityPercentage = useMemo(() => last ? (last.humidity / 100) : 0, [last])
-
-    
 
     return (data && last) ?
         <main>
             <div className={styles.row}>
-                <Temperature data={data} last={last}/>
+                <Temperature data={data} last={last} />
             </div>
             <div className={styles.row}>
                 <Stat
